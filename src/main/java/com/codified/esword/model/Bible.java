@@ -4,13 +4,19 @@ import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 @Getter
 @Entity
-@ToString
 @Table(name = "Bible")
 public class Bible {
 
@@ -18,6 +24,6 @@ public class Bible {
     private ScriptureId scriptureId;
 
     @NonNull
-    @Column(name = "scripture")
+    @Column(name = "Scripture")
     private String scripture;
 }
