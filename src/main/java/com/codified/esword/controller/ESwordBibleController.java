@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codified.esword.model.Bible;
+import com.codified.esword.model.Details;
 import com.codified.esword.service.BibleService;
 
 import io.swagger.v3.oas.annotations.Parameter;
@@ -57,4 +58,9 @@ public class ESwordBibleController {
         return bibleVerse;
     }
 
+    @GetMapping(value = "/details")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Details> getDetails() {
+        return bibleService.getDetails();
+    }
 }
